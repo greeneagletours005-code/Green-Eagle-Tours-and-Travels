@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Eagle Tours – Premium Tours from Coimbatore</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="glass-nav" id="navbar">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-3">
+
+        <div class="logo-wrapper">
+          <img src="images/logo.png" alt="Green Eagle Tours" class="nav-logo">
+        </div>
+
+        <div class="d-none d-lg-flex gap-5">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="tour-packages.html" class="nav-link">Tour Packages</a>
+          <a href="hourly-packages.html" class="nav-link">Hourly Packages</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- MOBILE MENU -->
+  <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <img src="images/logo.png" alt="Green Eagle Tours" style="width:140px;margin-bottom:40px;">
+
+    <a href="index.html" class="active" onclick="closeMenu()">Home</a>
+<a href="tour-packages.html" onclick="closeMenu()">Tour Packages</a>
+<a href="hourly-packages.html" onclick="closeMenu()">Hourly Packages</a>
+<a href="services.html" onclick="closeMenu()">Services</a>
+<a href="about.html" onclick="closeMenu()">About</a>
+<a href="contact.html" onclick="closeMenu()">Contact</a>
+
+  </div>
+
+
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+
+        <div style="font-size: 13px; letter-spacing: 3px; color: var(--gold); margin-bottom: 14px;">
+          GREEN EAGLE TOURS & TRAVELS
+        </div>
+
+        <h1 class="hero-title">
+          Moments<br>That Matter
+        </h1>
+
+        <p class="hero-subtitle" style="max-width: 520px;">
+          Thoughtfully curated journeys from Coimbatore across South India —
+          where comfort, reliability, and local expertise come together to create
+          travel experiences worth remembering.
+        </p>
+
+        <p style="font-size: 16px; line-height: 1.7; opacity: 0.85; max-width: 520px; margin-bottom: 28px;">
+          From hill stations and heritage towns to spiritual retreats and leisure getaways,
+          we design every trip with care, ensuring smooth travel, premium vehicles,
+          and personalized service from start to finish.
+        </p>
+
+        <!-- Primary Actions -->
+        <div class="d-flex gap-3 flex-wrap mb-4"
+             style="animation: fadeInUp 1s ease-out 0.4s backwards;">
+
+          <a href="#bk"
+             class="btn"
+             style="background: var(--gold); color: #0f172a; padding: 12px 32px; border-radius: 30px; font-weight: 600;">
+            Plan Your Trip
+          </a>
+
+          <a href="tour-packages.html"
+             class="btn"
+
+             style="border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 32px; border-radius: 30px;">
+            Tour packages
+          </a>
+
+        </div>
+
+        <!-- Contact Details -->
+        <div class="d-flex gap-4 flex-wrap"
+             style="font-size: 14px; opacity: 0.9;">
+
+          <a href="tel:+919751415617"
+             style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+            <i class="bi bi-telephone-fill" style="color: var(--gold);"></i>
+            <span>+91 97514 15617</span>
+          </a>
+
+          <a  href="mailto:support@greeneagletours.com"
+             style="color: rgba(255,255,255,0.8); text-decoration: none; display: flex; align-items: center; gap: 8px;">
+            <i class="bi bi-envelope-fill" style="color: var(--gold);"></i>
+            <span >support@greeneagletours.com</span>
+          </a>
+
+        </div>
+
+      </div >
+
+
+        <div id="bk"   class="col-lg-6">
+          <div class="booking-glass">
+            <h3 style="font-size: 28px; margin-bottom: 10px;">Begin Your Experience</h3>
+            <p style="opacity: 0.7; font-size: 14px; margin-bottom: 30px;">Personalized itineraries crafted for discerning travelers</p>
+
+            <form onsubmit="sendWhatsApp(event)" id="bookingForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Your Name" id="name" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Pickup Location" id="pickup">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Drop Location" id="destination">
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control" placeholder="Places to Visit (e.g., Ooty, Kodaikanal, Munnar...)" id="places">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-mobile">Pickup Date & Time</label>
+                  <input type="datetime-local" class="form-control" id="startDate">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label-mobile">Drop Date & Time</label>
+                  <input type="datetime-local" class="form-control" id="endDate">
+                </div>
+                <div class="col-12">
+                  <select class="form-select" id="vehicle">
+                    <option value="">Select Vehicle</option>
+                    <option value="Sedan 4+1">Sedan 4+1</option>
+                    <option value="Ertiga MPV">Ertiga MPV 6+1</option>
+                    <option value="Innova Crysta">Innova / Crysta 6+1 / 7+1</option>
+                    <option value="Hycross Premium">Hycross Premium 6+1</option>
+                    <option value="Traveller 12-14">Traveller 12–14</option>
+                    <option value="Traveller 15-18">Traveller 15–18</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Accommodation Yes/No -->
+              <div class="mt-4">
+                <label style="font-weight: 500; font-size: 15px; margin-bottom: 12px; display: block;">Need Accommodation?</label>
+                <div class="toggle-group">
+                  <div class="toggle-btn" onclick="selectAccommodation('yes')" id="accomYes">
+                    <i class="bi bi-check-circle me-2"></i>Yes
+                  </div>
+                  <div class="toggle-btn" onclick="selectAccommodation('no')" id="accomNo">
+                    <i class="bi bi-x-circle me-2"></i>No
+                  </div>
+                </div>
+              </div>
+
+              <!-- Accommodation Details (hidden initially) -->
+              <div id="accommodationDetails" class="hidden">
+                <!-- Adults Counter -->
+                <div class="mt-4">
+                  <label style="font-weight: 500; font-size: 15px; margin-bottom: 12px; display: block;">Adults</label>
+                  <div class="counter-control">
+                    <span style="opacity: 0.8;">Number of Adults</span>
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="counter-btn" onclick="changeCounter('adults', -1)">−</div>
+                      <div class="counter-value" id="adultsCount">1</div>
+                      <div class="counter-btn" onclick="changeCounter('adults', 1)">+</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Children Counter -->
+                <div class="mt-3">
+                  <label style="font-weight: 500; font-size: 15px; margin-bottom: 12px; display: block;">Children</label>
+                  <div class="counter-control">
+                    <span style="opacity: 0.8;">Number of Children</span>
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="counter-btn" onclick="changeCounter('children', -1)">−</div>
+                      <div class="counter-value" id="childrenCount">0</div>
+                      <div class="counter-btn" onclick="changeCounter('children', 1)">+</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Child Ages (appears when children > 0) -->
+                <div id="childAgesContainer" class="hidden">
+                  <label style="font-weight: 500; font-size: 15px; margin: 15px 0 12px; display: block;">Child Ages</label>
+                  <div class="child-ages" id="childAges"></div>
+                </div>
+
+                <!-- Stay Type Selector -->
+                <div class="mt-4">
+                  <label style="font-weight: 500; font-size: 15px; margin-bottom: 12px; display: block;">Accommodation Style</label>
+                  <div class="stay-selector">
+                    <div class="stay-option" onclick="selectStay(this)" data-value="Budget">
+                      <span>Budget</span>
+                    </div>
+                    <div class="stay-option" onclick="selectStay(this)" data-value="Home Stay">
+                      <span>Home Stay</span>
+                    </div>
+                    <div class="stay-option active" onclick="selectStay(this)" data-value="3-Star">
+                      <span>3-Star</span>
+                      <div class="popular-badge">POPULAR</div>
+                    </div>
+                    <div class="stay-option" onclick="selectStay(this)" data-value="4-Star">
+                      <span>4-Star</span>
+                    </div>
+                    <div class="stay-option" onclick="selectStay(this)" data-value="5-Star">
+                      <span>5-Star</span>
+                      <div class="premium-badge">LUXURY</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+<br>
+              <button type="submit" class="btn-luxury">
+                <span><i class="bi bi-whatsapp me-2"></i>Send WhatsApp Enquiry</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <br>
+  <br>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); position: relative;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div style="font-size: 14px; color: var(--gold); letter-spacing: 2px; margin-bottom: 15px;">ABOUT US</div>
+          <h2 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 25px; font-family: 'Cormorant Garamond', serif; font-weight: 300;">Your Trusted Travel Partner from Coimbatore</h2>
+          <p style="font-size: 18px; line-height: 1.8; opacity: 0.9; margin-bottom: 25px;">
+            Green Eagle Tours & Travels is Coimbatore's premier travel service, specializing in curated tours across South India. From the misty hills of Ooty and Kodaikanal to the serene backwaters of Kerala, we craft journeys that blend luxury with authentic local experiences.
+          </p>
+          <p style="font-size: 18px; line-height: 1.8; opacity: 0.9; margin-bottom: 30px;">
+            With years of expertise in tour planning and a fleet of premium vehicles, we ensure every mile of your journey is comfortable, safe, and memorable. Whether it's a family vacation, corporate retreat, or romantic getaway, we tailor each experience to your unique preferences.
+          </p>
+          <div class="row g-4">
+            <div class="col-6">
+              <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="font-size: 36px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">500+</div>
+                <div style="opacity: 0.8;">Happy Travelers</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
+                <div style="font-size: 36px; font-weight: 700; color: var(--gold); margin-bottom: 8px;">50+</div>
+                <div style="opacity: 0.8;">Destinations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-12">
+              <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1584132915807-fd1f5fbc078f?w=800&q=80" alt="Ooty Tea Gardens" style="width: 100%; height: 300px; object-fit: cover;">
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala Backwaters" style="width: 100%; height: 250px; object-fit: cover;">
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=600&q=80" alt="Kodaikanal Lake" style="width: 100%; height: 250px; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
+
+  <section style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); position: relative;">
+    <div class="container py-5">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5">
+        <div style="font-size: 14px; color: var(--gold); letter-spacing: 2px; margin-bottom: 10px;">
+          WHY CHOOSE US
+        </div>
+        <h2 style="font-size: clamp(2.2rem, 4vw, 3.2rem); font-family: 'Cormorant Garamond', serif; font-weight: 300;">
+          Experience Travel, Designed Around You
+        </h2>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="h-100 feature-card">
+            <h5>Personalized Itineraries</h5>
+            <p>
+              Every journey is thoughtfully planned based on your travel style, pace, and interests—no fixed packages, no rushed schedules.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="h-100 feature-card">
+            <h5>Premium Vehicles & Drivers</h5>
+            <p>
+              Our well-maintained fleet and experienced chauffeurs ensure safety, punctuality, and comfort throughout your trip.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="h-100 feature-card">
+            <h5>Local Expertise</h5>
+            <p>
+              From hidden viewpoints to the best local eateries, we bring you authentic experiences beyond standard tourist routes.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Counters -->
+      <div class="row text-center g-4 mb-5">
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <div class="stat-number" data-count="500">0</div>
+            <div class="stat-label">Happy Travelers</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <div class="stat-number" data-count="50">0</div>
+            <div class="stat-label">Destinations Covered</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <div class="stat-number" data-count="10">0</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-box">
+            <div class="stat-number" data-count="24">0</div>
+            <div class="stat-label">Support Availability</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="aboutAccordion">
+
+            <div class="accordion-item custom-accordion">
+              <h2 class="accordion-header" id="headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq1"
+                  aria-expanded="false"
+                  aria-controls="faq1">
+                  Do you offer fully customized tours?
+                </button>
+              </h2>
+              <div
+                id="faq1"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingOne"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  Yes. Every tour is customized based on your dates, budget, destinations, and preferences.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item custom-accordion">
+              <h2 class="accordion-header" id="headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq2"
+                  aria-expanded="false"
+                  aria-controls="faq2">
+                  Are your services suitable for families and senior citizens?
+                </button>
+              </h2>
+              <div
+                id="faq2"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingTwo"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  Absolutely. We plan relaxed itineraries, comfortable stays, and safe travel for all age groups.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item custom-accordion">
+              <h2 class="accordion-header" id="headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#faq3"
+                  aria-expanded="false"
+                  aria-controls="faq3">
+                  Which destinations do you specialize in?
+                </button>
+              </h2>
+              <div
+                id="faq3"
+                class="accordion-collapse collapse"
+                aria-labelledby="headingThree"
+                data-bs-parent="#aboutAccordion">
+                <div class="accordion-body">
+                  Ooty, Kodaikanal, Kerala, Coorg, Valparai, Palani, and major South Indian tourist circuits.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- CTA -->
+      <div class="text-center mt-5">
+        <a href="index.html#bk" class="btn btn-lg"
+           style="background: var(--gold); color: #0f172a; padding: 14px 36px; border-radius: 30px; font-weight: 600;">
+          Plan Your Journey
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+  <div class="container">
+    <div class="text-center">
+      <img src="images/logo.png" alt="Green Eagle Tours" style="height: 70px; margin-bottom: 20px;">
+
+      <p style="opacity: 0.8; max-width: 600px; margin: 0 auto 30px;">
+        Your premier travel partner for curated journeys from Coimbatore across South India. Excellence in every mile.
+      </p>
+
+      <div class="footer-divider"></div>
+
+      <div class="mb-4">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919751415617" class="social-link" target="_blank">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+
+        <!-- Phone -->
+        <a href="tel:+919751415617" class="social-link">
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:support@greeneagletours.com" class="social-link">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+
+        <!-- Facebook (add link later) -->
+        <a href="https://www.facebook.com/share/1GHVkhtPcd/" class="social-link" target="_blank">
+          <i class="bi bi-facebook"></i>
+        </a>
+
+        <!-- Instagram (add link later) -->
+        <a href="https://www.instagram.com/green_eagle_holidays?igsh=MW9zcmtlYXlpeXRoYg==
+" class="social-link" target="_blank">
+          <i class="bi bi-instagram"></i>
+        </a>
+      </div>
+
+<p style="font-size: 14px; opacity: 0.7;">
+  GST : 33BVFPG0418P1ZM
+</p>
+      <p style="font-size: 14px; opacity: 0.7;">
+        78, Siruvani Main Rd, Post office upstairs, Perur, Coimbatore, Tamil Nadu 641010
+      </p>
+      <p style="font-size: 14px; opacity: 0.7;">
+        © 2026 Green Eagle Tours & Travels.
+      </p>
+      <p style="font-size: 14px; opacity: 0.7;">
+        Designed & curated by
+        <a href="https://marcinmind.in" target="_blank" style="text-decoration: none; color: var(--gold);">
+          Marc in Mind Technologies
+        </a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING ACTION BAR (MOBILE – SAME AS INDEX) -->
+<div class="fab-bar" id="fabBar">
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+
+      <div class="col d-lg-none">
+        <a href="index.html" class="fab-item">
+          <i class="bi bi-house-fill"></i>
+          <span>Home</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="mailto:support@greeneagletours.com" class="fab-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>Mail</span>
+        </a>
+      </div>
+
+
+      <div class="col">
+        <a href="https://wa.me/919751415617" class="fab-item" target="_blank">
+          <i class="bi bi-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="tel:+919751415617" class="fab-item">
+          <i class="bi bi-telephone-fill"></i>
+          <span>Call</span>
+        </a>
+      </div>
+
+      <div class="col d-lg-none">
+        <a href="javascript:void(0)" onclick="openMenu()" class="fab-item">
+          <i class="bi bi-list"></i>
+          <span>Menu</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script src="script.js"></script>
+  <!-- Counter Script -->
+  <script>
+  document.querySelectorAll('.stat-number').forEach(counter => {
+    let target = +counter.getAttribute('data-count');
+    let count = 0;
+    let increment = target / 80;
+
+    function updateCounter() {
+      count += increment;
+      if (count < target) {
+        counter.innerText = Math.ceil(count);
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.innerText = target + '+';
+      }
+    }
+    updateCounter();
+  });
+  </script>
+</body>
+</html>
