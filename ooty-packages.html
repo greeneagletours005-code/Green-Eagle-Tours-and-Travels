@@ -768,7 +768,14 @@ function toggleDetails(id){
   document.querySelectorAll('.package-details').forEach(e=>e!==t&&e.classList.remove('active'));
   t.classList.toggle('active');
 }
-
+/* TAB SWITCHING - THIS WAS MISSING */
+function showTab(event, tabId) {
+  const card = event.target.closest('.package-details');
+  card.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  card.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+  event.target.classList.add('active');
+  card.querySelector('#' + tabId).classList.add('active');
+}
 /* OPEN MODAL */
 function openBookingModal(name,price){
   currentPackageName=name;
