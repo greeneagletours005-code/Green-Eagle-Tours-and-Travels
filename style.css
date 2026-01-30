@@ -11,6 +11,9 @@
   --light: #f8fafc;
   --glow: rgba(32, 178, 170, 0.25);
 }
+#bookingModal .modal-body {
+  padding-bottom: 120px !important;
+}
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
