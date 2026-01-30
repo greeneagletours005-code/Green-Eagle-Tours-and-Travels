@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tour Packages – Green Eagle Tours & Travels</title>
+<title>Kerala Tour Packages – Green Eagle Tours & Travels</title>
 
 <link rel="icon" href="images/logo.png">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +16,8 @@
   h1{font-size:28px}
 }
 
-/* STATE CARDS */
-.state-card{
+/* DESTINATION CARDS */
+.destination-card{
   position:relative;
   height:420px;
   border-radius:24px;
@@ -26,21 +26,21 @@
   transition:all .4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
 }
-.state-card:hover{
+.destination-card:hover{
   transform:translateY(-12px) scale(1.02);
   box-shadow:0 30px 60px rgba(0,0,0,.45);
   border-color: var(--gold);
 }
-.state-card img{
+.destination-card img{
   width:100%;
   height:100%;
   object-fit:cover;
   transition: transform .4s ease;
 }
-.state-card:hover img{
+.destination-card:hover img{
   transform: scale(1.1);
 }
-.state-overlay{
+.destination-overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(to top,rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.2) 100%);
@@ -50,7 +50,7 @@
   padding:30px;
   transition: background .4s ease;
 }
-.state-card:hover .state-overlay{
+.destination-card:hover .destination-overlay{
   background:linear-gradient(to top,rgba(0,0,0,.95) 0%, rgba(0,0,0,.6) 50%, rgba(0,0,0,.3) 100%);
 }
 
@@ -75,44 +75,18 @@
   50% { transform: scale(1.05); }
 }
 
-.state-title{
+.destination-title{
   color:#fff;
-  font-size:36px;
+  font-size:32px;
   font-weight:600;
   margin-bottom: 8px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-.state-sub{
+.destination-sub{
   color:rgba(255,255,255,.85);
   font-size:14px;
   margin-bottom: 15px;
-  line-height: 1.5;
-}
-
-.price-tag{
-  display: inline-flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-top: 10px;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.price-label{
-  color: rgba(255,255,255,0.7);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.price-amount{
-  color: var(--gold);
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  line-height: 1.6;
 }
 
 .explore-btn{
@@ -120,7 +94,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 15px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: transparent;
   color: white;
   border: 2px solid var(--gold);
@@ -132,28 +106,29 @@
   opacity: 0;
   transform: translateY(10px);
   transition: all .3s ease;
+  text-decoration: none;
 }
 
-.state-card:hover .explore-btn{
+.destination-card:hover .explore-btn{
   opacity: 1;
   transform: translateY(0);
   background: var(--gold);
   color: #0f172a;
 }
 
+.destination-icon{
+  font-size: 18px;
+  margin-right: 8px;
+  color: var(--gold);
+}
+
 @media(max-width:768px){
-  .state-card{height:340px}
-  .state-title{font-size:26px}
-  .price-amount{font-size:20px}
+  .destination-card{height:340px}
+  .destination-title{font-size:24px}
   .package-badge{font-size:11px; padding: 6px 15px;}
 }
 
-/* ENHANCED HERO */
-.hero-section{
-  position: relative;
-  overflow: hidden;
-}
-
+/* HERO */
 .hero-stats{
   display: flex;
   justify-content: center;
@@ -185,6 +160,24 @@
   .hero-stats{gap: 40px; margin-top: 30px;}
   .stat-number{font-size: 36px;}
 }
+
+/* Breadcrumb */
+.breadcrumb-custom{
+  background: rgba(255,255,255,0.05);
+  padding: 15px 0;
+  margin-bottom: 0;
+}
+.breadcrumb-custom a{
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color .3s ease;
+}
+.breadcrumb-custom a:hover{
+  color: var(--gold);
+}
+.breadcrumb-custom .active{
+  color: white;
+}
 </style>
 </head>
 
@@ -207,38 +200,37 @@
 </div>
 </nav>
 
+
+
 <!-- HERO -->
-<section class="hero-section" style="min-height:70vh">
+<section class="hero-section" style="min-height:65vh">
   <div class="hero-bg"></div>
   <div class="container hero-content text-center">
     <div style="color:var(--gold);letter-spacing:3px;font-size:14px;">
-      TOUR PACKAGES
+      GOD'S OWN COUNTRY
     </div>
-    <h1 class="hero-title" style="font-size: 56px; margin-top: 15px;">Explore South India</h1>
-    <p class="hero-subtitle mx-auto" style="max-width:700px;">
-      Discover handcrafted tour packages across Tamil Nadu, Kerala, and Karnataka.
-      <br>Premium experiences starting from ₹5,499.
-    </p>
+    <h1 class="hero-title" style="font-size: 52px; margin-top: 15px;">Explore Kerala</h1>
+
 
     <!-- Stats -->
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-number">9</div>
+        <div class="stat-number">2</div>
+        <div class="stat-label">Destinations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">4</div>
         <div class="stat-label">Tour Packages</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">3</div>
-        <div class="stat-label">States Covered</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">500+</div>
-        <div class="stat-label">Happy Travelers</div>
+        <div class="stat-number">₹7,999</div>
+        <div class="stat-label">Starting From</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATE SELECTION -->
+<!-- DESTINATIONS -->
 <section style="background:#0f172a; padding: 80px 0;">
 <div class="container">
 
@@ -247,33 +239,32 @@
       CHOOSE YOUR DESTINATION
     </div>
     <h2 style="color:white;font-size:38px;font-weight:600;margin-bottom:15px;">
-      Select a State to Begin Your Journey
+      Popular Kerala Destinations
     </h2>
     <p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto;">
-      Each package is carefully curated to give you the best experience of South India's culture, heritage, and natural beauty.
+      Experience the lush green landscapes, serene backwaters, and misty mountains of God's Own Country.
     </p>
   </div>
 
-  <div class="row g-4">
+  <div class="row g-4 justify-content-center">
 
-    <!-- TAMIL NADU -->
-    <div class="col-md-4">
-      <a href="tamilnadu-tour-packages.html" style="text-decoration:none">
-        <div class="state-card">
+    <!-- MUNNAR -->
+    <div class="col-md-6">
+      <a href="munnar-packages.html" style="text-decoration:none">
+        <div class="destination-card">
           <div class="package-badge">
-            <i class="bi bi-star-fill" style="margin-right:5px;"></i>5 PACKAGES
+            <i class="bi bi-star-fill" style="margin-right:5px;"></i>2 PACKAGES
           </div>
-          <img src="images/tamilnadu.webp" alt="Tamil Nadu Tour Packages">
-          <div class="state-overlay">
+          <img src="images/munnar.webp" alt="Munnar Tour Packages">
+          <div class="destination-overlay">
             <div>
-              <div class="state-title">Tamil Nadu</div>
-              <div class="state-sub">
-                <i class="bi bi-geo-alt-fill" style="margin-right:5px;"></i>
-                Temples • Hill Stations • Heritage • Beaches
-              </div>
-              <div class="price-tag">
-                <span class="price-label">Starting from</span>
-                <span class="price-amount">₹5,499</span>
+              <div class="destination-title">Munnar</div>
+              <div class="destination-sub">
+                <i class="bi bi-geo-alt-fill destination-icon"></i>
+                Kashmir of South India
+                <br>
+                <i class="bi bi-snow2 destination-icon"></i>
+                Tea Gardens • Waterfalls • Wildlife • Scenic Valleys
               </div>
               <div class="explore-btn">
                 Explore Packages <i class="bi bi-arrow-right"></i>
@@ -284,52 +275,23 @@
       </a>
     </div>
 
-    <!-- KERALA -->
-    <div class="col-md-4">
-      <a href="kerala-tour-packages.html" style="text-decoration:none">
-        <div class="state-card">
+    <!-- WAYANAD -->
+    <div class="col-md-6">
+      <a href="wayanad-packages.html" style="text-decoration:none">
+        <div class="destination-card">
           <div class="package-badge">
             <i class="bi bi-star-fill" style="margin-right:5px;"></i>2 PACKAGES
           </div>
-          <img src="images/kerala.webp" alt="Kerala Tour Packages">
-          <div class="state-overlay">
+          <img src="images/wayanad.webp" alt="Wayanad Tour Packages">
+          <div class="destination-overlay">
             <div>
-              <div class="state-title">Kerala</div>
-              <div class="state-sub">
-                <i class="bi bi-geo-alt-fill" style="margin-right:5px;"></i>
-                Backwaters • Hill Stations • Ayurveda • Beaches
-              </div>
-              <div class="price-tag">
-                <span class="price-label">Starting from</span>
-                <span class="price-amount">₹7,999</span>
-              </div>
-              <div class="explore-btn">
-                Explore Packages <i class="bi bi-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- KARNATAKA -->
-    <div class="col-md-4">
-      <a href="karnataka-tour-packages.html" style="text-decoration:none">
-        <div class="state-card">
-          <div class="package-badge">
-            <i class="bi bi-star-fill" style="margin-right:5px;"></i>2 PACKAGES
-          </div>
-          <img src="images/karnataka.webp" alt="Karnataka Tour Packages">
-          <div class="state-overlay">
-            <div>
-              <div class="state-title">Karnataka</div>
-              <div class="state-sub">
-                <i class="bi bi-geo-alt-fill" style="margin-right:5px;"></i>
-                Heritage • Wildlife • Coffee Trails • Cities
-              </div>
-              <div class="price-tag">
-                <span class="price-label">Starting from</span>
-                <span class="price-amount">₹7,250</span>
+              <div class="destination-title">Wayanad</div>
+              <div class="destination-sub">
+                <i class="bi bi-geo-alt-fill destination-icon"></i>
+                Land of Paddy Fields
+                <br>
+                <i class="bi bi-tree destination-icon"></i>
+                Forests • Caves • Waterfalls • Wildlife Sanctuary
               </div>
               <div class="explore-btn">
                 Explore Packages <i class="bi bi-arrow-right"></i>
@@ -342,48 +304,49 @@
 
   </div>
 
-  <!-- Why Choose Us Section -->
+  <!-- Why Choose Kerala Section -->
   <div class="row mt-5 pt-5">
     <div class="col-12 text-center mb-4">
       <div style="color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:15px;">
-        WHY CHOOSE US
+        WHY KERALA
       </div>
       <h2 style="color:white;font-size:32px;font-weight:600;">
-        Your Trusted Travel Partner
+        Experience God's Own Country
       </h2>
     </div>
 
     <div class="col-md-3 col-6 text-center mb-4">
       <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-        <i class="bi bi-shield-check"></i>
+        <i class="bi bi-water"></i>
       </div>
-      <h5 style="color:white;font-weight:600;margin-bottom:10px;">Trusted Service</h5>
-      <p style="color:rgba(255,255,255,0.7);font-size:14px;">500+ satisfied customers</p>
+      <h5 style="color:white;font-weight:600;margin-bottom:10px;">Backwaters</h5>
+      <p style="color:rgba(255,255,255,0.7);font-size:14px;">Serene waterways</p>
     </div>
 
     <div class="col-md-3 col-6 text-center mb-4">
       <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-        <i class="bi bi-wallet2"></i>
+        <i class="bi bi-cup-hot-fill"></i>
       </div>
-      <h5 style="color:white;font-weight:600;margin-bottom:10px;">Best Prices</h5>
-      <p style="color:rgba(255,255,255,0.7);font-size:14px;">Competitive & transparent</p>
+      <h5 style="color:white;font-weight:600;margin-bottom:10px;">Tea Plantations</h5>
+      <p style="color:rgba(255,255,255,0.7);font-size:14px;">Lush green estates</p>
     </div>
 
     <div class="col-md-3 col-6 text-center mb-4">
       <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-        <i class="bi bi-headset"></i>
+        <i class="bi bi-tree-fill"></i>
       </div>
-      <h5 style="color:white;font-weight:600;margin-bottom:10px;">24/7 Support</h5>
-      <p style="color:rgba(255,255,255,0.7);font-size:14px;">Always here to help</p>
+      <h5 style="color:white;font-weight:600;margin-bottom:10px;">Wildlife</h5>
+      <p style="color:rgba(255,255,255,0.7);font-size:14px;">Rich biodiversity</p>
     </div>
 
     <div class="col-md-3 col-6 text-center mb-4">
       <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-heart-fill"></i>
       </div>
-      <h5 style="color:white;font-weight:600;margin-bottom:10px;">Expert Guides</h5>
-      <p style="color:rgba(255,255,255,0.7);font-size:14px;">Local & knowledgeable</p>
+      <h5 style="color:white;font-weight:600;margin-bottom:10px;">Ayurveda</h5>
+      <p style="color:rgba(255,255,255,0.7);font-size:14px;">Traditional healing</p>
     </div>
+
   </div>
 
 </div>
@@ -405,12 +368,12 @@
     <div class="accordion-item mb-3">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
-          What destinations do you cover?
+          What is the best time to visit Kerala hill stations?
         </button>
       </h2>
       <div id="faq1" class="accordion-collapse collapse">
         <div class="accordion-body">
-          We cover Tamil Nadu, Kerala, Karnataka and major South India destinations with 9 carefully curated tour packages.
+          The best time to visit Kerala hill stations like Munnar and Wayanad is from September to May. The weather is pleasant during these months with cool temperatures and clear skies. Monsoon season (June-August) offers lush greenery but can have heavy rainfall.
         </div>
       </div>
     </div>
@@ -418,12 +381,12 @@
     <div class="accordion-item mb-3">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-          What's included in the tour packages?
+          How far is Munnar from Coimbatore?
         </button>
       </h2>
       <div id="faq2" class="accordion-collapse collapse">
         <div class="accordion-body">
-          Our packages typically include transportation, accommodation, sightseeing, and select meals. Specific inclusions vary by package - check individual package details for complete information.
+          Munnar is approximately 170-180 km from Coimbatore and takes about 4-5 hours by road. The journey offers scenic views of Western Ghats and tea plantations along the way.
         </div>
       </div>
     </div>
@@ -431,19 +394,31 @@
     <div class="accordion-item mb-3">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
-          Can I customize a tour package?
+          What's included in the Kerala tour packages?
         </button>
       </h2>
       <div id="faq3" class="accordion-collapse collapse">
         <div class="accordion-body">
-          Yes! We offer customizable packages to suit your preferences. Contact us to discuss your requirements and we'll create a personalized itinerary for you.
+          Our Kerala packages include comfortable private cab transportation, professional driver, fuel, toll charges, and accommodation. Meals and entry tickets can be customized based on your preference. Check individual package details for specific inclusions.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item mb-3">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+          Can I customize the Kerala tour itinerary?
+        </button>
+      </h2>
+      <div id="faq4" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Absolutely! All our Kerala tour packages are fully customizable. You can add or remove destinations, extend your stay, or modify the itinerary to suit your preferences and schedule.
         </div>
       </div>
     </div>
   </div>
 </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="container">
