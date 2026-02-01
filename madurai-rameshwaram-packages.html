@@ -136,7 +136,7 @@
           </div>
 
           <div class="book-section">
-            <button class="book-now-btn" onclick="openBookingModal('Divine Heritage Express (2D/1N)', '9250')">
+            <button class="book-now-btn" onclick="openBookingModal('Divine Heritage Express Madurai/Rameshwaram (2D/1N)', '9250')">
               <i class="bi bi-calendar-check"></i>
               Book Now
             </button>
@@ -173,7 +173,7 @@
           </div>
 
           <div class="book-section">
-            <button class="book-now-btn" onclick="openBookingModal('Divine Heritage Express (2D/1N)', '9250')">
+            <button class="book-now-btn" onclick="openBookingModal('Divine Heritage Express Madurai/Rameshwaram (2D/1N)', '9250')">
               <i class="bi bi-calendar-check"></i>
               Book Now
             </button>
@@ -200,7 +200,7 @@
           </div>
 
           <div class="book-section">
-            <button class="book-now-btn" onclick="openBookingModal('Divine Heritage Express (2D/1N)', '9250')">
+            <button class="book-now-btn" onclick="openBookingModal('Divine Heritage Express Madurai/Rameshwaram (2D/1N)', '9250')">
               <i class="bi bi-calendar-check"></i>
               Book Now
             </button>
@@ -389,11 +389,10 @@
 
       <div class="modal-body">
 
-        <!-- SUMMARY -->
+        <!-- SUMMARY (REMOVED TOTAL LINE) -->
         <div class="mb-4 p-3 rounded" style="background:#f7fafc">
           <div><strong id="summaryPackage"></strong></div>
           <div>Price per person: <strong id="summaryPrice"></strong></div>
-          <div>Total: <strong id="totalPrice"></strong></div>
         </div>
 
         <form id="bookingForm" onsubmit="submitBooking(event)">
@@ -744,18 +743,28 @@ function openBookingModal(name,price){
   childAgesSection.style.display='none';
   bookingForm.reset();
 
-  updateTotal();
   new bootstrap.Modal(bookingModal).show();
 }
 
-/* COUNTERS */
-function changeAdults(s){ adults=Math.max(1,adults+s); adultCount.textContent=adults; updateTotal(); }
-function changeChildren(s){ children=Math.max(0,children+s); childCount.textContent=children; renderChildAges(); }
+/* COUNTERS - NO AUTO CALCULATION */
+function changeAdults(s){
+  adults=Math.max(1,adults+s);
+  adultCount.textContent=adults;
+}
+
+function changeChildren(s){
+  children=Math.max(0,children+s);
+  childCount.textContent=children;
+  renderChildAges();
+}
 
 /* CHILD AGES */
 function renderChildAges(){
   childAges.innerHTML='';
-  if(children===0){ childAgesSection.style.display='none'; updateTotal(); return;}
+  if(children===0){
+    childAgesSection.style.display='none';
+    return;
+  }
   childAgesSection.style.display='block';
 
   for(let i=1;i<=children;i++){
@@ -768,7 +777,6 @@ function renderChildAges(){
       </div>
     </div>`;
   }
-  updateTotal();
 }
 
 function changeAge(i,s){
@@ -776,20 +784,9 @@ function changeAge(i,s){
   let v=el.value===''?0:Number(el.value);
   v=Math.max(0,Math.min(17,v+s));
   el.value=v===0?'':v;
-  updateTotal();
 }
 
-/* PRICE LOGIC */
-function updateTotal(){
-  let total=adults*currentPackagePrice;
-  for(let i=1;i<=children;i++){
-    const age=Number(document.getElementById(`childAge${i}`)?.value||0);
-    if(age>=5) total+=currentPackagePrice;
-  }
-  totalPrice.textContent=`₹${total}`;
-}
-
-/* SUBMIT */
+/* SUBMIT - NO TOTAL IN MESSAGE */
 function submitBooking(e){
   e.preventDefault();
 
@@ -805,8 +802,6 @@ function submitBooking(e){
 
 👨 Adults: ${adults}
 🧒 Children: ${children}${ages.length?` (Ages: ${ages.join(', ')})`:''}
-
-💵 *Total:* ${totalPrice.textContent}
 
 👤 *Booking Person:* ${customerName.value}
 📞 *Phone:* ${customerPhone.value}
