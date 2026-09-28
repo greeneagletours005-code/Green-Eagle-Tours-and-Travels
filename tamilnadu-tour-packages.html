@@ -19,14 +19,15 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tour-hub.css">
 
 <style>
 @media(max-width:768px){
   h1{font-size:28px}
 }
 
-/* DESTINATION CARDS */
-.destination-card{
+/* STATE CARDS */
+.state-card{
   position:relative;
   height:420px;
   border-radius:24px;
@@ -35,21 +36,21 @@
   transition:all .4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 2px solid transparent;
 }
-.destination-card:hover{
+.state-card:hover{
   transform:translateY(-12px) scale(1.02);
   box-shadow:0 30px 60px rgba(0,0,0,.45);
   border-color: var(--gold);
 }
-.destination-card img{
+.state-card img{
   width:100%;
   height:100%;
   object-fit:cover;
   transition: transform .4s ease;
 }
-.destination-card:hover img{
+.state-card:hover img{
   transform: scale(1.1);
 }
-.destination-overlay{
+.state-overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(to top,rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.2) 100%);
@@ -59,7 +60,7 @@
   padding:30px;
   transition: background .4s ease;
 }
-.destination-card:hover .destination-overlay{
+.state-card:hover .state-overlay{
   background:linear-gradient(to top,rgba(0,0,0,.95) 0%, rgba(0,0,0,.6) 50%, rgba(0,0,0,.3) 100%);
 }
 
@@ -84,18 +85,44 @@
   50% { transform: scale(1.05); }
 }
 
-.destination-title{
+.state-title{
   color:#fff;
-  font-size:32px;
+  font-size:36px;
   font-weight:600;
   margin-bottom: 8px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
-.destination-sub{
+.state-sub{
   color:rgba(255,255,255,.85);
   font-size:14px;
   margin-bottom: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
+}
+
+.price-tag{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price-label{
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-amount{
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .explore-btn{
@@ -103,7 +130,7 @@
   align-items: center;
   gap: 8px;
   margin-top: 15px;
-  padding: 12px 24px;
+  padding: 10px 20px;
   background: transparent;
   color: white;
   border: 2px solid var(--gold);
@@ -115,29 +142,28 @@
   opacity: 0;
   transform: translateY(10px);
   transition: all .3s ease;
-  text-decoration: none;
 }
 
-.destination-card:hover .explore-btn{
+.state-card:hover .explore-btn{
   opacity: 1;
   transform: translateY(0);
   background: var(--gold);
   color: #0f172a;
 }
 
-.destination-icon{
-  font-size: 18px;
-  margin-right: 8px;
-  color: var(--gold);
-}
-
 @media(max-width:768px){
-  .destination-card{height:340px}
-  .destination-title{font-size:24px}
+  .state-card{height:340px}
+  .state-title{font-size:26px}
+  .price-amount{font-size:20px}
   .package-badge{font-size:11px; padding: 6px 15px;}
 }
 
-/* HERO */
+/* ENHANCED HERO */
+.hero-section{
+  position: relative;
+  overflow: hidden;
+}
+
 .hero-stats{
   display: flex;
   justify-content: center;
@@ -169,559 +195,33 @@
   .hero-stats{gap: 40px; margin-top: 30px;}
   .stat-number{font-size: 36px;}
 }
-
-/* Breadcrumb */
-.breadcrumb-custom{
-  background: rgba(255,255,255,0.05);
-  padding: 15px 0;
-  margin-bottom: 0;
-}
-.breadcrumb-custom a{
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
-  transition: color .3s ease;
-}
-.breadcrumb-custom a:hover{
-  color: var(--gold);
-}
-.breadcrumb-custom .active{
-  color: white;
-}
 </style>
 </head>
 
 <body>
 
 <!-- NAV -->
-<nav class="glass-nav">
-<div class="container d-flex justify-content-between py-3">
-  <div class="logo-wrapper">
-    <img src="images/logo.png" alt="Green Eagle Tours" class="nav-logo">
-  </div>
-  <div class="d-none d-lg-flex gap-5">
-    <a href="index.html" class="nav-link">Home</a>
-    <a href="tour-packages.html" class="nav-link active">Tour Packages</a>
-    <a href="hourly-packages.html" class="nav-link">Hourly Packages</a>
-    <a href="services.html" class="nav-link">Services</a>
-    <a href="about.html" class="nav-link">About</a>
-    <a href="contact.html" class="nav-link">Contact</a>
-  </div>
-</div>
-</nav>
+<script src="header.js"></script>
 
-
-
-<!-- HERO -->
-<section class="hero-section" style="min-height:65vh">
-  <div class="hero-bg"></div>
-  <div class="container hero-content text-center">
-    <div style="color:var(--gold);letter-spacing:3px;font-size:14px;">
-      TAMIL NADU
-    </div>
-    <h1 class="hero-title" style="font-size: 52px; margin-top: 15px;">Explore Tamil Nadu</h1>
-
-
-    <!-- Stats -->
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-number">4</div>
-        <div class="stat-label">Destinations</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">7</div>
-        <div class="stat-label">Tour Packages</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">₹5,499</div>
-        <div class="stat-label">Starting From</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DESTINATIONS -->
-<section style="background:#0f172a; padding: 80px 0;">
-<div class="container">
-
-  <div class="text-center mb-5">
-    <div style="color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:15px;">
-      CHOOSE YOUR DESTINATION
-    </div>
-    <h2 style="color:white;font-size:38px;font-weight:600;margin-bottom:15px;">
-      Popular Tamil Nadu Destinations
-    </h2>
-    <p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto;">
-      From misty hill stations to ancient temples, explore the best of Tamil Nadu with our expertly crafted packages.
-    </p>
-  </div>
-
-  <div class="row g-4">
-
-    <!-- OOTY -->
-    <div class="col-md-3">
-      <a href="ooty-packages.html" style="text-decoration:none">
-        <div class="destination-card">
-          <div class="package-badge">
-            <i class="bi bi-star-fill" style="margin-right:5px;"></i>2 PACKAGES
-          </div>
-          <img src="images/ooty.webp" alt="Ooty Tour Packages">
-          <div class="destination-overlay">
-            <div>
-              <div class="destination-title">Ooty</div>
-              <div class="destination-sub">
-                <i class="bi bi-geo-alt-fill destination-icon"></i>
-                The Queen of Hill Stations
-                <br>
-                <i class="bi bi-snow2 destination-icon"></i>
-                Tea Gardens • Botanical Gardens • Toy Train • Lakes
-              </div>
-              <div class="explore-btn">
-                Explore Packages <i class="bi bi-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- KODAIKANAL -->
-    <div class="col-md-3">
-      <a href="kodaikanal-packages.html" style="text-decoration:none">
-        <div class="destination-card">
-          <div class="package-badge">
-            <i class="bi bi-star-fill" style="margin-right:5px;"></i>2 PACKAGES
-          </div>
-          <img src="images/kodaikanal.webp" alt="Kodaikanal Tour Packages">
-          <div class="destination-overlay">
-            <div>
-              <div class="destination-title">Kodaikanal</div>
-              <div class="destination-sub">
-                <i class="bi bi-geo-alt-fill destination-icon"></i>
-                The Princess of Hill Stations
-                <br>
-                <i class="bi bi-water destination-icon"></i>
-                Lakes • Waterfalls • View Points • Pine Forests
-              </div>
-              <div class="explore-btn">
-                Explore Packages <i class="bi bi-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- VALPARAI -->
-    <div class="col-md-3">
-      <a href="valparai-packages.html" style="text-decoration:none">
-        <div class="destination-card">
-          <div class="package-badge">
-            <i class="bi bi-star-fill" style="margin-right:5px;"></i>1 PACKAGE
-          </div>
-          <img src="images/valparai.webp" alt="Valparai Tour Packages">
-          <div class="destination-overlay">
-            <div>
-              <div class="destination-title">Valparai</div>
-              <div class="destination-sub">
-                <i class="bi bi-geo-alt-fill destination-icon"></i>
-                Hidden Hill Station Paradise
-                <br>
-                <i class="bi bi-tree destination-icon"></i>
-                Tea Estates • Wildlife • Waterfalls • Scenic Valleys
-              </div>
-              <div class="explore-btn">
-                Explore Packages <i class="bi bi-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-    <!-- MADURAI-RAMESHWARAM -->
-    <div class="col-md-3">
-      <a href="madurai-rameshwaram-packages.html" style="text-decoration:none">
-        <div class="destination-card">
-          <div class="package-badge">
-            <i class="bi bi-star-fill" style="margin-right:5px;"></i>2 PACKAGES
-          </div>
-          <img src="images/madurai-rameshwaram.webp" alt="Madurai Rameshwaram Tour Packages">
-          <div class="destination-overlay">
-            <div>
-              <div class="destination-title">Madurai - Rameshwaram</div>
-              <div class="destination-sub">
-                <i class="bi bi-geo-alt-fill destination-icon"></i>
-                Spiritual & Cultural Journey
-                <br>
-                <i class="bi bi-buildings destination-icon"></i>
-                Temples • Beaches • Heritage • Pilgrimage Sites
-              </div>
-              <div class="explore-btn">
-                Explore Packages <i class="bi bi-arrow-right"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
-
-  </div>
-
-  <!-- Why Choose Tamil Nadu Section -->
-  <div class="row mt-5 pt-5">
-    <div class="col-12 text-center mb-4">
-      <div style="color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:15px;">
-        WHY TAMIL NADU
-      </div>
-      <h2 style="color:white;font-size:32px;font-weight:600;">
-        Experience the Best of Tamil Nadu
-      </h2>
-    </div>
-
-    <div class="col-md-3 col-6 text-center mb-4">
-    <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-      <i class="bi bi-bank"></i>
-    </div>
-    <h5 style="color:white;font-weight:600;margin-bottom:10px;">Ancient Temples</h5>
-    <p style="color:rgba(255,255,255,0.7);font-size:14px;">Architectural marvels</p>
-  </div>
-
-  <div class="col-md-3 col-6 text-center mb-4">
-    <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-      <i class="bi bi-geo-alt-fill"></i>
-    </div>
-    <h5 style="color:white;font-weight:600;margin-bottom:10px;">Hill Stations</h5>
-    <p style="color:rgba(255,255,255,0.7);font-size:14px;">Cool climate retreats</p>
-  </div>
-
-  <div class="col-md-3 col-6 text-center mb-4">
-    <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-      <i class="bi bi-tree-fill"></i>
-    </div>
-    <h5 style="color:white;font-weight:600;margin-bottom:10px;">Rich Heritage</h5>
-    <p style="color:rgba(255,255,255,0.7);font-size:14px;">Culture & traditions</p>
-  </div>
-
-  <div class="col-md-3 col-6 text-center mb-4">
-    <div style="font-size:48px;color:var(--gold);margin-bottom:15px;">
-      <i class="bi bi-cup-hot-fill"></i>
-    </div>
-    <h5 style="color:white;font-weight:600;margin-bottom:10px;">Local Cuisine</h5>
-    <p style="color:rgba(255,255,255,0.7);font-size:14px;">Authentic flavors</p>
-  </div>
-
-  </div>
-
-</div>
-</section>
-
-<!-- FAQ SECTION -->
-<section style="background:#0f172a">
-<div class="container py-5">
-  <div class="text-center mb-5">
-    <div style="color:var(--gold);letter-spacing:3px;font-size:14px;">
-      FAQ
-    </div>
-    <h2 class="hero-title" style="color:white;font-size:32px;">
-      Frequently Asked Questions
-    </h2>
-  </div>
-
-  <div class="accordion" id="faqAccordion">
-    <div class="accordion-item mb-3">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
-          What is the best time to visit Tamil Nadu hill stations?
-        </button>
-      </h2>
-      <div id="faq1" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          The best time to visit Tamil Nadu hill stations like Ooty, Kodaikanal, and Valparai is from October to June. April-May is peak summer season, while December-January can be quite cold with occasional mist.
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item mb-3">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
-          Are these packages customizable?
-        </button>
-      </h2>
-      <div id="faq2" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          Yes! All our Tamil Nadu tour packages can be customized based on your preferences, budget, and duration. Contact us to create your perfect itinerary.
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item mb-3">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
-          What's included in the tour packages?
-        </button>
-      </h2>
-      <div id="faq3" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          Our packages typically include comfortable transportation, professional driver, fuel, and toll charges. Accommodation and meals can be added based on your preference. Check individual package details for specific inclusions.
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item mb-3">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
-          Do you provide pickup from Coimbatore?
-        </button>
-      </h2>
-      <div id="faq4" class="accordion-collapse collapse">
-        <div class="accordion-body">
-          Yes, we provide convenient pickup and drop services from anywhere in Coimbatore, including airport, railway station, or your preferred location.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="text-center">
-
-      <img src="images/logo.png" alt="Green Eagle Tours" class="footer-logo">
-
-      <p class="footer-desc">
-        Your premier travel partner for curated journeys from Coimbatore across South India.
-        Excellence in every mile.
-      </p>
-
-      <div class="footer-divider"></div>
-
-      <!-- TOUR LINKS -->
-      <div class="row text-start footer-tours">
-
-        <!-- Tamil Nadu -->
-        <div class="col-md-4 col-12 mb-4">
-          <a href="tamilnadu-tour-packages.html" class="footer-main-link">
-            Tamil Nadu Tour Packages
-          </a>
-          <ul class="footer-links">
-            <li><a href="ooty-packages.html">Ooty</a></li>
-            <li><a href="kodaikanal-packages.html">Kodaikanal</a></li>
-            <li><a href="valparai-packages.html">Valparai</a></li>
-            <li><a href="madurai-rameshwaram-packages.html">Madurai – Rameshwaram</a></li>
-          </ul>
-        </div>
-
-        <!-- Kerala -->
-        <div class="col-md-4 col-12 mb-4">
-          <a href="kerala-tour-packages.html" class="footer-main-link">
-            Kerala Tour Packages
-          </a>
-          <ul class="footer-links">
-            <li><a href="munnar-packages.html">Munnar</a></li>
-            <li><a href="wayanad-packages.html">Wayanad</a></li>
-          </ul>
-        </div>
-
-        <!-- Karnataka -->
-        <div class="col-md-4 col-12 mb-4">
-          <a href="karnataka-tour-packages.html" class="footer-main-link">
-            Karnataka Tour Packages
-          </a>
-          <ul class="footer-links">
-            <li><a href="mysore-tour-packages.html">Mysore</a></li>
-            <li><a href="mysore-coorg-tour-packages.html">Mysore – Coorg</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="footer-divider"></div>
-
-      <!-- SOCIAL -->
-      <div class="mb-4">
-        <a href="https://wa.me/919751415617" class="social-link" target="_blank"><i class="bi bi-whatsapp"></i></a>
-        <a href="tel:+919751415617" class="social-link"><i class="bi bi-telephone-fill"></i></a>
-        <a href="mailto:support@greeneagletours.com" class="social-link"><i class="bi bi-envelope-fill"></i></a>
-        <a href="https://www.facebook.com/share/1GHVkhtPcd/" class="social-link" target="_blank"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/green_eagle_holidays" class="social-link" target="_blank"><i class="bi bi-instagram"></i></a>
-      </div>
-
-      <p class="footer-small">GST : 33BVFPG0418P1ZM</p>
-      <p class="footer-small">
-        78, Siruvani Main Rd, Post office upstairs, Perur, Coimbatore, Tamil Nadu 641010
-      </p>
-      <p class="footer-small">© 2026 Green Eagle Tours & Travels.</p>
-      <p style="font-size: 14px; opacity: 0.7; color: #718096;">
-        Designed & curated by
-        <a href="https://marcinmind.in" target="_blank" style="text-decoration: none; color: #20b2aa;">Marc in Mind Technologies</a>.
-      </p>
-    </div>
-  </div>
-</footer>
-
+<main class="ge-tour-main"><section class="ge-tour-hero" style="--tour-image:url('images/tamilnadu.webp')"><div class="container"><span class="ge-tour-eyebrow">Tour collections</span><h1>Tamil Nadu Tour Packages</h1><p>Choose a destination to see available durations and send your trip enquiry.</p></div></section><section class="container ge-tour-section"><a class="ge-back" href="tour-packages.html"><i class="bi bi-arrow-left"></i> All tour collections</a><h2 class="ge-tour-heading">Explore Tamil Nadu</h2><div class="ge-destination-grid"><a class="ge-destination" href="coimbatore-packages.html" style="--card-image:url('images/coimbatore.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Coimbatore Local Sightseeing</strong><em>A flexible city tour covering Coimbatore’s favourite sights.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="ooty-packages.html" style="--card-image:url('images/ooty.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Ooty</strong><em>The Nilgiris, tea gardens and scenic viewpoints.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="kotagiri-packages.html" style="--card-image:url('images/kotagiri.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Kotagiri</strong><em>A quiet Nilgiris escape with tea country and green viewpoints.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="kodaikanal-packages.html" style="--card-image:url('images/kodaikanal.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Kodaikanal</strong><em>Lakeside walks, forest scenery and hill country.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="valparai-packages.html" style="--card-image:url('images/valparai.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Valparai</strong><em>A quieter hill escape through the Anamalai landscapes.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="madurai-packages.html" style="--card-image:url('images/madurai.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Madurai</strong><em>Temple heritage and the cultural heart of Tamil Nadu.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="rameshwaram-packages.html" style="--card-image:url('images/rameshwaram.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Rameswaram</strong><em>An island pilgrimage with sacred sites and coastal views.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="kanyakumari-packages.html" style="--card-image:url('images/kanyakumari.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Kanyakumari</strong><em>The southern coast, heritage sights and memorable sunrise views.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="palani-packages.html" style="--card-image:url('images/Palani.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Palani</strong><em>A Murugan temple journey planned around darshan.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="marudhamalai-packages.html" style="--card-image:url('images/marudhamalai.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Marudhamalai</strong><em>A visit to the hilltop Murugan temple near Coimbatore.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="tiruvannamalai-packages.html" style="--card-image:url('images/tiruvannamalai.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Tiruvannamalai</strong><em>A temple and Arunachala pilgrimage with flexible travel timing.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="thanjavur-packages.html" style="--card-image:url('images/Thanjavur.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Thanjavur</strong><em>Chola heritage, temples and the historic city.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="trichy-packages.html" style="--card-image:url('images/Trichy.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Trichy</strong><em>Temple heritage and riverside city sights.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="tiruchendur-packages.html" style="--card-image:url('images/Tiruchendur.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Tiruchendur</strong><em>A coastal Murugan temple visit and temple town journey.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="chidambaram-packages.html" style="--card-image:url('images/Chidambaram.webp')"><span class="ge-destination-content"><small>Tamil Nadu</small><strong>Chidambaram</strong><em>A Nataraja temple journey with heritage stops.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a></div></section></main><!-- FOOTER -->
+<script src="footer.js"></script>
 <!-- ================= FLOATING ACTION BAR + MOBILE MENU ================= -->
 
-<style>
-/* ========== FLOATING ACTION BAR ========== */
-.fab-bar{
-  position:fixed;
-  bottom:0;left:0;right:0;
-  background:#fff;
-  border-top:1px solid rgba(32,178,170,.3);
-  box-shadow:0 -10px 40px rgba(15,23,42,.15);
-  z-index:1200;
-}
-.fab-inner{
-  display:flex;
-  justify-content:space-around;
-  padding:12px 6px;
-}
-.fab-item{
-  text-decoration:none;
-  color:#0f172a;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:4px;
-  font-size:12px;
-  transition:.3s;
-}
-.fab-item i{font-size:22px}
-.fab-item:hover{color:#4fa3a0}
 
-/* DESKTOP – RIGHT SIDE VERTICAL */
-@media(min-width:992px){
-  .fab-bar{
-    top:50%;bottom:auto;right:18px;left:auto;
-    transform:translateY(-50%);
-    width:64px;border-radius:40px;
-  }
-  .fab-inner{flex-direction:column;gap:18px}
-  .fab-item span{display:none}
-}
-
-/* ========== MOBILE MENU ========== */
-body.menu-open{overflow:hidden}
-
-.menu-overlay{
-  position:fixed;inset:0;
-  background:rgba(15,23,42,.45);
-  opacity:0;pointer-events:none;
-  transition:.3s;
-  z-index:1500;
-}
-.menu-overlay.show{
-  opacity:1;pointer-events:auto;
-}
-
-.mobile-menu{
-  position:fixed;
-  top:0;right:-100%;
-  width:85%;max-width:380px;
-  height:100vh;
-  background:linear-gradient(180deg,#fff,#f1f5f9,#e2e8f0);
-  padding:40px 30px;
-  transition:.45s cubic-bezier(.4,0,.2,1);
-  z-index:2000;
-}
-.mobile-menu.active{right:0}
-
-.mobile-menu img{
-  display:block;margin:0 auto 40px;
-  padding:16px;background:#fff;
-  border-radius:16px;
-  border:1px solid rgba(79,163,160,.6);
-  max-width:160px;
-}
-
-.mobile-menu a{
-  display:block;
-  font-family:'Cormorant Garamond',serif;
-  font-size:22px;
-  color:#0f172a;
-  text-decoration:none;
-  margin-bottom:26px;
-  transition:.3s;
-}
-.mobile-menu a:hover{
-  color:#4fa3a0;
-  transform:translateX(10px);
-}
-.mobile-menu a.active{
-  color:#4fa3a0;
-  font-weight:600;
-  position:relative;
-}
-.mobile-menu a.active::before{
-  content:"";
-  position:absolute;
-  left:-12px;top:50%;
-  transform:translateY(-50%);
-  width:4px;height:60%;
-  background:#4fa3a0;
-  border-radius:4px;
-}
-</style>
 
 <!-- FLOATING BAR -->
-<div class="fab-bar">
-  <div class="fab-inner">
 
-    <a href="index.html" class="fab-item d-lg-none">
-      <i class="bi bi-house-fill"></i><span>Home</span>
-    </a>
-
-    <a href="mailto:support@greeneagletours.com" class="fab-item">
-      <i class="bi bi-envelope-fill"></i><span>Mail</span>
-    </a>
-
-    <a href="https://wa.me/919751415617" target="_blank" class="fab-item">
-      <i class="bi bi-whatsapp"></i><span>WhatsApp</span>
-    </a>
-
-    <a href="tel:+919751415617" class="fab-item">
-      <i class="bi bi-telephone-fill"></i><span>Call</span>
-    </a>
-
-    <a href="javascript:void(0)" onclick="openMenu()" class="fab-item d-lg-none">
-      <i class="bi bi-list"></i><span>Menu</span>
-    </a>
-
-  </div>
-</div>
 
 <!-- MOBILE MENU -->
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-<div class="mobile-menu" id="mobileMenu">
-  <img src="images/logo.png" alt="Green Eagle Tours">
 
-  <a href="index.html" class="active" onclick="closeMenu()">Home</a>
-  <a href="tour-packages.html" onclick="closeMenu()">Tour Packages</a>
-  <a href="hourly-packages.html" onclick="closeMenu()">Hourly Packages</a>
-  <a href="services.html" onclick="closeMenu()">Services</a>
-  <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
-</div>
 
-<script>
-function openMenu(){
-  document.getElementById("mobileMenu").classList.add("active");
-  document.getElementById("menuOverlay").classList.add("show");
-  document.body.classList.add("menu-open");
-}
-function closeMenu(){
-  document.getElementById("mobileMenu").classList.remove("active");
-  document.getElementById("menuOverlay").classList.remove("show");
-  document.body.classList.remove("menu-open");
-}
-</script>
+
 
 
 <!-- ================= END ================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

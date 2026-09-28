@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17918400351"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17918400351');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilgrimage Tour Packages – Green Eagle Tours & Travels</title>
+
+<link rel="icon" href="images/logo.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="tour-hub.css">
+
+<style>
+@media(max-width:768px){
+  h1{font-size:28px}
+}
+
+/* STATE CARDS */
+.state-card{
+  position:relative;
+  height:420px;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  transition:all .4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+}
+.state-card:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 30px 60px rgba(0,0,0,.45);
+  border-color: var(--gold);
+}
+.state-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition: transform .4s ease;
+}
+.state-card:hover img{
+  transform: scale(1.1);
+}
+.state-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.2) 100%);
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding:30px;
+  transition: background .4s ease;
+}
+.state-card:hover .state-overlay{
+  background:linear-gradient(to top,rgba(0,0,0,.95) 0%, rgba(0,0,0,.6) 50%, rgba(0,0,0,.3) 100%);
+}
+
+.package-badge{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(212, 175, 55, 0.95);
+  color: #0f172a;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.state-title{
+  color:#fff;
+  font-size:36px;
+  font-weight:600;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.state-sub{
+  color:rgba(255,255,255,.85);
+  font-size:14px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.price-tag{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price-label{
+  color: rgba(255,255,255,0.7);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-amount{
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.explore-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: transparent;
+  color: white;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all .3s ease;
+}
+
+.state-card:hover .explore-btn{
+  opacity: 1;
+  transform: translateY(0);
+  background: var(--gold);
+  color: #0f172a;
+}
+
+@media(max-width:768px){
+  .state-card{height:340px}
+  .state-title{font-size:26px}
+  .price-amount{font-size:20px}
+  .package-badge{font-size:11px; padding: 6px 15px;}
+}
+
+/* ENHANCED HERO */
+.hero-section{
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-stats{
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item{
+  text-align: center;
+}
+
+.stat-number{
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label{
+  font-size: 14px;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media(max-width:768px){
+  .hero-stats{gap: 40px; margin-top: 30px;}
+  .stat-number{font-size: 36px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<script src="header.js"></script>
+
+<main class="ge-tour-main"><section class="ge-tour-hero" style="--tour-image:url('images/rameshwaram.webp')"><div class="container"><span class="ge-tour-eyebrow">Tour collections</span><h1>Pilgrimage Tour Packages</h1><p>Choose a destination to see available durations and send your trip enquiry.</p></div></section><section class="container ge-tour-section"><a class="ge-back" href="tour-packages.html"><i class="bi bi-arrow-left"></i> All tour collections</a><h2 class="ge-tour-heading">Explore Pilgrimage</h2><div class="ge-destination-grid"><a class="ge-destination" href="guruvayur-packages.html" style="--card-image:url('images/Guruvayur.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Guruvayur</strong><em>A temple journey planned around your darshan timing.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="sabarimala-packages.html" style="--card-image:url('images/Sabarimala.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Sabarimala</strong><em>A pilgrimage route planned around travel and darshan requirements.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="rameshwaram-packages.html" style="--card-image:url('images/rameshwaram.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Rameswaram</strong><em>An island pilgrimage with sacred sites and coastal views.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="madurai-packages.html" style="--card-image:url('images/madurai.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Madurai</strong><em>Temple heritage and the cultural heart of Tamil Nadu.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="madurai-rameshwaram-packages.html" style="--card-image:url('images/madurai-rameshwaram.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Madurai &amp; Rameswaram</strong><em>Explore Madurai’s heritage and Rameswaram’s sacred sites on one journey.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="marudhamalai-packages.html" style="--card-image:url('images/marudhamalai.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Marudhamalai</strong><em>A visit to the hilltop Murugan temple near Coimbatore.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="kanyakumari-packages.html" style="--card-image:url('images/kanyakumari.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Kanyakumari</strong><em>The southern coast, heritage sights and memorable sunrise views.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="palani-packages.html" style="--card-image:url('images/Palani.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Palani</strong><em>A Murugan temple journey planned around darshan.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="tiruvannamalai-packages.html" style="--card-image:url('images/tiruvannamalai.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Tiruvannamalai</strong><em>A temple and Arunachala pilgrimage with flexible travel timing.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="thanjavur-packages.html" style="--card-image:url('images/Thanjavur.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Thanjavur</strong><em>Chola heritage, temples and the historic city.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="trichy-packages.html" style="--card-image:url('images/Trichy.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Trichy</strong><em>Temple heritage and riverside city sights.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="tiruchendur-packages.html" style="--card-image:url('images/Tiruchendur.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Tiruchendur</strong><em>A coastal Murugan temple visit and temple town journey.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="chidambaram-packages.html" style="--card-image:url('images/Chidambaram.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Chidambaram</strong><em>A Nataraja temple journey with heritage stops.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="tirupati-packages.html" style="--card-image:url('images/Tirupati.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Tirupati</strong><em>A Tirumala pilgrimage planned around darshan and travel time.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a><a class="ge-destination" href="udupi-packages.html" style="--card-image:url('images/udupi.webp')"><span class="ge-destination-content"><small>Pilgrimage</small><strong>Udupi</strong><em>Coastal Karnataka with temple heritage and seaside stops.</em><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></a></div></section></main><!-- FOOTER -->
+<script src="footer.js"></script>
+<!-- ================= FLOATING ACTION BAR + MOBILE MENU ================= -->
+
+
+
+<!-- FLOATING BAR -->
+
+
+<!-- MOBILE MENU -->
+
+
+
+
+
+
+<!-- ================= END ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

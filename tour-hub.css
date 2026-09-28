@@ -1,0 +1,78 @@
+/* Tour pages only: Green Eagle navy, teal and gold palette. */
+.ge-tour-main{background:#0f172a;color:#fff;padding-bottom:88px}
+.ge-tour-hero{position:relative;isolation:isolate;min-height:380px;display:flex;align-items:center;padding:84px 0;background:#142239;overflow:hidden}
+.ge-tour-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,20,35,.93),rgba(10,20,35,.56)),var(--tour-image) center/cover no-repeat;z-index:-1}
+.ge-tour-eyebrow{color:var(--gold,#d4af37);font-size:.8rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.ge-tour-hero h1,.ge-tour-heading{font-family:'Cormorant Garamond',serif;line-height:1.03;font-weight:600}
+.ge-tour-hero h1{font-size:clamp(2.9rem,6vw,5.5rem);margin:14px 0 18px;max-width:830px}
+.ge-tour-hero p{max-width:680px;color:#d9e1e9;line-height:1.7;font-size:1.06rem;margin:0}
+.ge-tour-section{padding-top:66px}
+.ge-tour-heading{font-size:clamp(2.2rem,4vw,3.4rem);margin:10px 0 14px;color:#fff}
+.ge-tour-intro{color:#aebdcd;max-width:750px;line-height:1.7;margin-bottom:28px}
+.ge-category{border:1px solid rgba(255,255,255,.14);background:#16253a;margin-bottom:15px;overflow:hidden}
+.ge-category>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:22px 26px;min-height:90px}
+.ge-category>summary::-webkit-details-marker{display:none}
+.ge-category>summary:focus-visible,.ge-destination:focus-visible,.ge-enquire:focus-visible{outline:3px solid #eccb67;outline-offset:3px}
+.ge-category-number{color:var(--gold,#d4af37);font:600 1.35rem 'Cormorant Garamond',serif;min-width:36px}
+.ge-category-name{font:600 clamp(1.65rem,3vw,2.3rem) 'Cormorant Garamond',serif;flex:1}
+.ge-category-count{color:#aebdcd;font-size:.85rem;margin-right:12px}
+.ge-category-chevron{color:var(--gold,#d4af37);transition:transform .2s}
+.ge-category[open] .ge-category-chevron{transform:rotate(180deg)}
+.ge-category-content{border-top:1px solid rgba(255,255,255,.12);padding:24px}
+.ge-destination-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.ge-destination{display:flex;position:relative;min-height:232px;align-items:flex-end;overflow:hidden;color:#fff;text-decoration:none;background:#1a3344}
+.ge-destination::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,16,29,.95),rgba(6,16,29,.08) 75%),var(--card-image) center/cover no-repeat;transition:transform .35s}
+.ge-destination:hover::before{transform:scale(1.045)}
+.ge-destination-content{position:relative;padding:22px;width:100%}
+.ge-destination small{color:#eccb67;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem}
+.ge-destination strong{display:block;font:600 2rem 'Cormorant Garamond',serif;line-height:1.1;margin:4px 0}
+.ge-destination em{font-style:normal;color:#d8e2e9;font-size:.88rem}
+.ge-destination i{float:right;color:#eccb67}
+.ge-tour-note{color:#c0ccda;font-size:.92rem;line-height:1.65;margin-top:22px}
+.ge-back{display:inline-flex;color:#e1c46a;text-decoration:none;margin-bottom:18px;gap:8px;align-items:center}
+.ge-back:hover{color:#fff}
+.ge-duration-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.ge-duration-card{background:#fff;color:#263244;border:1px solid #e6e9ee;box-shadow:0 16px 32px rgba(0,0,0,.13);display:flex;flex-direction:column}
+.ge-duration-top{padding:28px 28px 18px}
+.ge-duration-label{font-size:.7rem;font-weight:700;letter-spacing:.16em;color:#318b88;text-transform:uppercase}
+.ge-duration-card h3{font:600 2rem 'Cormorant Garamond',serif;margin:10px 0 7px;color:#13253b}
+.ge-duration-card p{color:#5e6c7b;line-height:1.6;margin:0}
+.ge-price{border-top:1px solid #e7edf0;margin:20px 28px 0;padding-top:15px;color:#526274;font-size:.82rem}
+.ge-price strong{display:block;font:700 1.8rem 'Inter',sans-serif;color:#15283d;margin:2px 0}
+.ge-price small{display:block;line-height:1.5}
+.ge-card-actions{display:flex;align-items:center;gap:10px;padding:20px 28px 27px;margin-top:auto;flex-wrap:wrap}
+.ge-enquire{background:#4fa3a0;color:#fff;border:0;padding:12px 20px;font-weight:700;cursor:pointer}
+.ge-enquire:hover{background:#377e7b;color:#fff}
+.ge-details-btn{border:1px solid #ced7df;background:transparent;color:#173148;padding:11px 17px;font-weight:600;cursor:pointer}
+.ge-details-btn:hover{border-color:#4fa3a0;color:#247c79}
+.ge-package-detail{padding:0 28px 25px;color:#44556b;line-height:1.7}
+.ge-package-detail h4{font-size:1rem;color:#163149;font-weight:700;margin-top:12px}
+.ge-package-detail ul{padding-left:20px;margin-bottom:0}
+.ge-terms{background:#1a2b40;border-left:3px solid #d4af37;color:#c8d5e2;padding:17px 20px;margin-top:25px;line-height:1.6}
+.ge-modal .modal-content{border:0;border-radius:0}.ge-modal .modal-header{background:#10253a;color:#fff;border:0}.ge-modal .modal-title{font-family:'Cormorant Garamond',serif;font-size:1.75rem}.ge-modal label{font-weight:600;font-size:.9rem}.ge-modal .form-control,.ge-modal .form-select{border-radius:0;min-height:45px}.ge-modal .modal-body{padding:24px}.ge-modal .ge-summary{background:#eff6f5;border-left:3px solid #4fa3a0;padding:13px 16px;margin-bottom:20px;color:#163149}
+@media(max-width:991px){.ge-destination-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.ge-tour-hero{min-height:310px;padding:65px 0}.ge-tour-section{padding-top:45px}.ge-category>summary{padding:17px;gap:8px;min-height:75px}.ge-category-count{font-size:.72rem;margin-right:0}.ge-category-content{padding:14px}.ge-destination-grid,.ge-duration-grid{grid-template-columns:1fr;gap:14px}.ge-destination{min-height:210px}.ge-duration-top{padding:23px 20px 14px}.ge-price{margin:14px 20px 0}.ge-card-actions{padding:18px 20px 22px}.ge-package-detail{padding:0 20px 22px}}
+
+/* Light tour layout: consistent dark text and clear distance below fixed header. */
+.ge-tour-main{background:#f5f8fa;color:#14283b;padding:90px 0 85px}
+.ge-tour-hero{background:#eaf1f3;min-height:350px;padding:74px 0 66px}
+.ge-tour-hero::before{background:linear-gradient(90deg,rgba(250,253,253,.96) 0%,rgba(249,252,252,.91) 45%,rgba(247,251,252,.52) 100%),var(--tour-image) center/cover no-repeat}
+.ge-tour-hero h1{color:#10283b!important;text-shadow:none;margin:16px 0 17px}
+.ge-tour-hero p{color:#314759;font-weight:500}
+.ge-tour-eyebrow,.ge-category-number{color:#147b78}
+.ge-tour-section{padding-top:80px}
+.ge-tour-heading{color:#10283b!important;margin:16px 0 18px}
+.ge-tour-intro,.ge-tour-note{color:#526579}
+.ge-category{background:#fff;border:1px solid #d9e3e9;box-shadow:0 9px 26px rgba(18,44,62,.055);margin-bottom:17px}
+.ge-category>summary{color:#152e40}.ge-category-name{color:#152e40}.ge-category-count{color:#526579}.ge-category-chevron{color:#157f7b}.ge-category-content{border-color:#e1e9ed;background:#f9fbfc}
+.ge-destination{display:flex;flex-direction:column;justify-content:flex-end;min-height:280px;background:#fff;color:#152b3d;box-shadow:0 8px 20px rgba(17,45,62,.08);border:1px solid #e0e9ec}
+.ge-destination::before{inset:0 0 auto;height:162px;background:var(--card-image) center/cover no-repeat}
+.ge-destination-content{margin-top:162px;background:#fff;padding:17px 19px 19px;min-height:116px}
+.ge-destination small{color:#127571}.ge-destination strong{color:#152b3d!important;font-size:1.85rem}.ge-destination em{color:#506276}.ge-destination i{color:#187f7b}
+.ge-back{color:#147b78}.ge-back:hover{color:#0e4d4b}
+.ge-terms{background:#eaf3f2;color:#344c5d;border-left-color:#4fa3a0}
+.ge-modal .modal-title{color:#fff!important;text-shadow:none}.ge-modal .modal-header{background:#143047}.ge-modal .modal-body{color:#203747}
+@media(max-width:991px){.ge-tour-main{padding-top:79px}}
+@media(max-width:650px){.ge-tour-hero{min-height:290px;padding:58px 0 54px}.ge-tour-section{padding-top:56px}.ge-destination{min-height:270px}.ge-destination-content{min-height:108px}}
+.ge-tour-section .ge-back{display:flex;width:max-content;max-width:100%;margin:0 0 25px;align-items:center;gap:8px}
+.ge-tour-section .ge-back + .ge-tour-eyebrow{display:block;margin-bottom:10px}
