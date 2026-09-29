@@ -235,5 +235,30 @@
       <a href="https://wa.me/919751415617" class="fab-item" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
       <a href="tel:+919751415617" class="fab-item"><i class="bi bi-telephone-fill"></i><span>Call</span></a></div>
   </div>`;
-  document.currentScript.insertAdjacentHTML('afterend', markup);
+  document.currentScript.insertAdjacentHTML('afterend', markup + `
+    <div class="ge-support-shade" id="geSupportShade" hidden>
+      <div class="ge-support-popup" role="dialog" aria-modal="true" aria-labelledby="geSupportTitle">
+        <button class="ge-support-close" id="geSupportClose" type="button" aria-label="Close support popup"><i class="bi bi-x-lg"></i></button>
+        <div class="ge-support-icon"><i class="bi bi-headset"></i></div>
+        <span class="ge-support-kicker">Green Eagle customer support</span>
+        <h2 id="geSupportTitle">Need help choosing a tour?</h2>
+        <p>Call our expert. We’ll guide you to the right package for your journey.</p>
+        <a class="ge-support-call" href="tel:+919751415617"><i class="bi bi-telephone-fill"></i> Call Now</a>
+      </div>
+    </div>`);
+  const shade = document.getElementById('geSupportShade');
+  const close = document.getElementById('geSupportClose');
+  const dismiss = () => { shade.hidden = true; };
+  close.addEventListener('click', dismiss);
+  shade.addEventListener('click', event => { if (event.target === shade) dismiss(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !shade.hidden) dismiss(); });
+  const show = () => {
+    shade.hidden = false;
+    close.focus();
+  };
+  // Each page visit gets exactly two brief appearances, then stops.
+  setTimeout(show, 500);
+  setTimeout(dismiss, 3000);
+  setTimeout(show, 4000);
+  setTimeout(dismiss, 8000);
 })();

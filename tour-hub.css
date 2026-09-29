@@ -76,3 +76,37 @@
 @media(max-width:650px){.ge-tour-hero{min-height:290px;padding:58px 0 54px}.ge-tour-section{padding-top:56px}.ge-destination{min-height:270px}.ge-destination-content{min-height:108px}}
 .ge-tour-section .ge-back{display:flex;width:max-content;max-width:100%;margin:0 0 25px;align-items:center;gap:8px}
 .ge-tour-section .ge-back + .ge-tour-eyebrow{display:block;margin-bottom:10px}
+
+/* Package actions and enquiry details. */
+.ge-card-actions{gap:9px}
+.ge-call-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#2163b4;color:#fff;text-decoration:none;padding:12px 18px;font-weight:700;line-height:1.5}
+.ge-call-btn:hover,.ge-call-btn:focus-visible{background:#164d92;color:#fff}
+.ge-card-actions .ge-enquire,.ge-card-actions .ge-details-btn{line-height:1.5}
+.ge-stay-choice{border:0;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ge-stay-choice legend{font-size:.9rem;font-weight:700;margin-bottom:10px;color:#203747}
+.ge-stay-choice label{cursor:pointer;position:relative;min-width:0}
+.ge-stay-choice input{position:absolute;opacity:0;width:1px;height:1px}
+.ge-stay-choice span{display:flex;align-items:center;flex-wrap:wrap;gap:5px 10px;border:1px solid #cbd9df;background:#f7fafb;padding:14px 16px;min-height:75px;color:#19344b}
+.ge-stay-choice i{color:#338e89;font-size:22px}
+.ge-stay-choice strong{font-size:1rem}
+.ge-stay-choice small{width:100%;padding-left:32px;color:#5b6d7b}
+.ge-stay-choice input:checked+span{background:#eaf6f4;border-color:#168b84;box-shadow:inset 0 0 0 1px #168b84}
+.ge-stay-choice input:focus-visible+span{outline:3px solid #e6b956;outline-offset:2px}
+.ge-stay-fields{border:1px solid #d6e3e4;background:#f8fbfb;padding:18px}
+.ge-stay-heading{font-weight:700;color:#214357;margin:0 0 12px}
+.ge-date-input{display:flex;position:relative}.ge-date-input input{cursor:pointer;padding-right:50px}.ge-date-input button{position:absolute;right:0;top:0;height:100%;width:45px;border:0;background:#e9f3f2;color:#236e6b;font-size:20px}
+.ge-date-panel[hidden]{display:none!important}
+.ge-date-panel{position:fixed;inset:0;z-index:1080;background:rgba(12,31,45,.65);display:grid;place-items:center;padding:18px}
+.ge-date-box{width:min(100%,480px);background:#fff;padding:26px;box-shadow:0 28px 60px rgba(0,0,0,.25);color:#203747}
+.ge-date-box h3{font-size:2rem;font-weight:600;margin:0 0 6px;color:#163149}.ge-date-box p{color:#5a6b7b;margin-bottom:18px}.ge-date-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}.ge-date-error{color:#b42318!important;margin:12px 0 0!important;font-size:.9rem}
+@media(max-width:650px){.ge-card-actions{display:grid;grid-template-columns:1fr 1fr}.ge-card-actions .ge-details-btn{grid-column:1/-1}.ge-stay-choice{gap:8px}.ge-stay-choice span{padding:12px 10px}.ge-stay-choice small{padding-left:0}.ge-date-box{padding:21px}}
+
+/* Compact accommodation choice and readable package outline. */
+.ge-stay-choice{display:flex;align-items:center;flex-wrap:wrap;gap:8px;border:0}
+.ge-stay-label{flex-basis:100%;font-size:.9rem;font-weight:700;color:#203747;margin-bottom:2px}
+.ge-stay-choice label{display:inline-flex;margin:0}
+.ge-stay-choice span{display:inline-flex;align-items:center;justify-content:center;min-height:36px;min-width:74px;padding:6px 17px;border:1px solid #bdcfd5;border-radius:4px;background:#fff;color:#18394d;font-size:.9rem;font-weight:700}
+.ge-stay-choice input:checked+span{background:#dff2ef;border-color:#19857e;box-shadow:inset 0 0 0 1px #19857e}
+.ge-package-detail .ge-day-plan{list-style:none;padding:0;margin:8px 0 15px}
+.ge-day-plan li{padding:10px 0;border-bottom:1px solid #e7ecef;line-height:1.6}
+.ge-package-detail .ge-detail-note{margin:17px 0 0;background:#eff7f6;border-left:3px solid #4fa3a0;padding:11px 13px;font-size:.9rem}

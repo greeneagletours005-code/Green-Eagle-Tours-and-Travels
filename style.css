@@ -981,3 +981,15 @@ footer{padding-bottom:115px}.footer-tours .footer-main-link{line-height:1.4}.foo
 @media(max-width:991px){.ge-desktop-links{display:none}.ge-mobile-only{display:flex!important}.ge-nav-inner{min-height:79px}.nav-logo{height:54px}}
 @media(max-width:575px){.fab-bar .fab-item{min-width:60px}.fab-bar .fab-item i{font-size:20px}.fab-bar .fab-item span{font-size:11px}.mobile-menu{padding:55px 24px 100px}}
 body.modal-open .fab-bar{display:none}
+
+/* Two brief support prompts on each page, shared from footer.js. */
+.ge-support-shade[hidden]{display:none!important}
+.ge-support-shade{position:fixed;inset:0;z-index:2500;background:rgba(10,27,42,.58);display:grid;place-items:center;padding:18px}
+.ge-support-popup{position:relative;width:min(100%,420px);padding:34px 30px 30px;background:#fff;text-align:center;box-shadow:0 25px 70px rgba(0,0,0,.26);border-top:4px solid #4fa3a0;color:#24394b}
+.ge-support-popup .ge-support-close{position:absolute;right:13px;top:12px;background:none;border:0;padding:8px;color:#364b5e;cursor:pointer}
+.ge-support-icon{width:58px;height:58px;margin:0 auto 16px;border-radius:50%;background:#eaf6f4;color:#267d78;display:grid;place-items:center;font-size:27px}
+.ge-support-kicker{text-transform:uppercase;letter-spacing:.13em;color:#277b77;font-size:.72rem;font-weight:700}
+.ge-support-popup h2{color:#152c40;font-size:2.2rem;font-weight:600;margin:10px 0}
+.ge-support-popup p{color:#536578;line-height:1.55;margin:0 0 23px}
+.ge-support-call{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#2163b4;color:#fff;text-decoration:none;padding:12px 25px;font-weight:700}
+.ge-support-call:hover,.ge-support-call:focus-visible{background:#164d92;color:#fff}
