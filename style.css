@@ -1023,3 +1023,19 @@ body.modal-open .fab-bar{display:none}
 .ge-policy-help{background:#e7f2f2;border:1px solid #cddfe2;padding:28px;color:#3d5c6b}.ge-policy-help>i{font-size:30px;color:#27827d}.ge-policy-help h2{font-size:2rem;font-weight:600;line-height:1.1;margin:16px 0}.ge-policy-help p{font-size:.9rem;line-height:1.75}.ge-policy-help>a{display:block;color:#166c6b;font-weight:600;margin:20px 0 0}.ge-policy-email{font-size:.8rem;overflow-wrap:anywhere}
 @media(max-width:1199px){.ge-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.ge-home-grid,.ge-footer-offices{grid-template-columns:1fr}.ge-home-collections{padding:38px 0}.ge-home-card-image{height:200px}.ge-registration-separator{display:block;font-size:0;margin:8px}.ge-terms-page{padding-top:116px}.ge-terms-document{padding:23px}.ge-terms-document h2{font-size:1.55rem}}
+
+/* Compact operating locations: hover/click on desktop, tap to expand on touch. */
+.ge-operating-section{max-width:850px;margin:4px auto 30px;padding:23px 0 27px;border-top:1px solid #cddde1;border-bottom:1px solid #cddde1;text-align:left}
+.ge-operating-section>h3{font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0;color:#1c4553;margin:0 0 7px}
+.ge-operating-section>p{font-size:.82rem;line-height:1.6;color:#5c7180;margin:0 0 17px}
+.ge-operating-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ge-operating-group{position:relative;min-width:0}
+.ge-operating-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 15px;background:#fff;border:1px solid #c6dadd;border-radius:5px;color:#20555d;font-family:'Inter',sans-serif;font-size:.84rem;font-weight:600;cursor:pointer;line-height:1.5}
+.ge-operating-toggle:hover,.ge-operating-toggle[aria-expanded="true"]{background:#e8f4f2;border-color:#7eb9b3}
+.ge-operating-toggle:focus-visible{outline:2px solid #278b83;outline-offset:3px}
+.ge-operating-toggle i{font-size:.7rem;transition:transform .15s}.ge-operating-toggle[aria-expanded="true"] i{transform:rotate(180deg)}
+.ge-operating-panel[hidden]{display:none!important}
+.ge-operating-panel{position:absolute;left:0;top:calc(100% - 1px);min-width:100%;width:max-content;max-width:min(320px,85vw);z-index:20;padding:10px 16px;background:#fff;border:1px solid #c6dadd;border-radius:0 0 5px 5px;box-shadow:0 12px 28px rgba(17,56,69,.13)}
+.ge-operating-panel ul{list-style:none;padding:0;margin:0}.ge-operating-panel li{font-size:.8rem;color:#415e6c;line-height:1.65;padding:5px 0;overflow-wrap:anywhere}
+@media(max-width:650px),(hover:none){.ge-operating-panel{position:static;width:100%;max-width:none;min-width:0;box-shadow:none;border-top:0;padding:10px 15px}.ge-operating-grid{align-items:start}}
+@media(max-width:650px){.ge-operating-grid{grid-template-columns:1fr;gap:9px}.ge-operating-section{padding:22px 0}.ge-operating-toggle{padding:11px 14px}}

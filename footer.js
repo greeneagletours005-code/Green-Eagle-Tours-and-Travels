@@ -215,6 +215,18 @@
   ]
 ];
   const tours = columns.map(([name, href, items]) => `<div class="col-6 col-lg-3 mb-4"><a class="footer-main-link" href="${href}">${name} Tour Packages</a><ul class="footer-links">${items.map(([label, url]) => `<li><a href="${url}">${label}</a></li>`).join('')}</ul></div>`).join('');
+  const operatingLocations = [
+    ['Tamil Nadu', ['Ooty','Coimbatore','Kodaikanal','Madurai','Trichy','Chennai','Erode','Salem']],
+    ['Kerala', ['Kochi (Cochin)','Thrissur','Kozhikode','Thiruvananthapuram (Trivandrum)','Wayanad','Alappuzha (Alleppey)','Munnar','Thekkady']],
+    ['Karnataka', ['Mysore','Bengaluru (Bangalore)','Coorg','Chikmagalur','Mangalore','Udupi']]
+  ];
+  const operations = `<div class="ge-operating-section" aria-labelledby="geOperatingTitle">
+    <h3 id="geOperatingTitle">Our Operating Locations</h3><p>Trips can start from the following locations.</p>
+    <div class="ge-operating-grid">${operatingLocations.map(([state,locations],i) => `<div class="ge-operating-group">
+      <button class="ge-operating-toggle" type="button" aria-expanded="false" aria-controls="geOperating${i}"><span>${state}</span><i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+      <div class="ge-operating-panel" id="geOperating${i}" hidden><ul>${locations.map(city=>`<li>${city}</li>`).join('')}</ul></div>
+    </div>`).join('')}</div>
+  </div>`;
   const markup = `<footer><div class="container text-center">
     <img src="images/logo.png" alt="Green Eagle Tours" class="footer-logo">
     <p class="footer-desc">Your travel partner for journeys from Coimbatore across South India. Excellence in every mile.</p>
@@ -224,6 +236,7 @@
       <a href="mailto:support@greeneagletours.com" class="social-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
       <a href="https://www.facebook.com/share/1GHVkhtPcd/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
       <a href="https://www.instagram.com/green_eagle_holidays" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a></div>
+    ${operations}
     <div class="ge-footer-offices"><div><h3>Head office</h3><p>78, Siruvani Main Rd, Post office upstairs, Perur, Coimbatore, Tamil Nadu 641010</p></div>
       <div><h3>Branch office address</h3><p>6/119 AE, Bharathanagar, Kollappay, The Nilgiris – 643253.</p></div></div>
     <p class="footer-small"><strong>GSTIN:</strong> 33BVFPG0418P1ZM <span class="ge-registration-separator">|</span> <strong>MSME:</strong> UDYAM-TN-03-0122605</p>
@@ -248,6 +261,28 @@
         <a class="ge-support-call" href="tel:+919751415617"><i class="bi bi-telephone-fill"></i> Call Now</a>
       </div>
     </div>`);
+  const groups = [...document.querySelectorAll('.ge-operating-group')];
+  const setOpen = (group,open) => {
+    group.querySelector('.ge-operating-toggle').setAttribute('aria-expanded',String(open));
+    group.querySelector('.ge-operating-panel').hidden = !open;
+  };
+  const closeOthers = active => groups.forEach(group => { if (group !== active) setOpen(group,false); });
+  groups.forEach(group => {
+    const button = group.querySelector('.ge-operating-toggle');
+    button.addEventListener('click', () => {
+      const open = button.getAttribute('aria-expanded') !== 'true';
+      closeOthers(group); setOpen(group,open);
+    });
+    group.addEventListener('mouseenter', () => {
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) { closeOthers(group); setOpen(group,true); }
+    });
+    group.addEventListener('mouseleave', () => {
+      if (!group.contains(document.activeElement)) setOpen(group,false);
+    });
+    group.addEventListener('focusout', event => { if (!group.contains(event.relatedTarget)) setOpen(group,false); });
+    group.addEventListener('keydown', event => { if (event.key === 'Escape') { setOpen(group,false); button.focus(); } });
+  });
+  document.addEventListener('click', event => { if (!event.target.closest('.ge-operating-group')) closeOthers(null); });
   const shade = document.getElementById('geSupportShade');
   const close = document.getElementById('geSupportClose');
   let previousFocus = null;
