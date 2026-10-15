@@ -224,8 +224,10 @@
       <a href="mailto:support@greeneagletours.com" class="social-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
       <a href="https://www.facebook.com/share/1GHVkhtPcd/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
       <a href="https://www.instagram.com/green_eagle_holidays" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a></div>
-    <p class="footer-small">GST: 33BVFPG0418P1ZM</p>
-    <p class="footer-small">78, Siruvani Main Rd, Post office upstairs, Perur, Coimbatore, Tamil Nadu 641010</p>
+    <div class="ge-footer-offices"><div><h3>Head office</h3><p>78, Siruvani Main Rd, Post office upstairs, Perur, Coimbatore, Tamil Nadu 641010</p></div>
+      <div><h3>Branch office address</h3><p>6/119 AE, Bharathanagar, Kollappay, The Nilgiris – 643253.</p></div></div>
+    <p class="footer-small"><strong>GSTIN:</strong> 33BVFPG0418P1ZM <span class="ge-registration-separator">|</span> <strong>MSME:</strong> UDYAM-TN-03-0122605</p>
+    <p class="ge-footer-policy"><a href="termsandconditions.html">Terms &amp; Conditions</a></p>
     <p class="footer-small">© 2026 Green Eagle Tours & Travels.</p>
     <p class="footer-small">Designed & curated by <a href="https://marcinmind.in" target="_blank" rel="noopener">Marc in Mind Technologies</a>.</p>
   </div></footer>
@@ -248,17 +250,25 @@
     </div>`);
   const shade = document.getElementById('geSupportShade');
   const close = document.getElementById('geSupportClose');
-  const dismiss = () => { shade.hidden = true; };
+  let previousFocus = null;
+  const dismiss = () => { shade.hidden = true; if (previousFocus && previousFocus.isConnected) previousFocus.focus(); };
   close.addEventListener('click', dismiss);
   shade.addEventListener('click', event => { if (event.target === shade) dismiss(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !shade.hidden) dismiss(); });
   const show = () => {
+    previousFocus = document.activeElement;
     shade.hidden = false;
     close.focus();
   };
-  // Each page visit gets exactly two brief appearances, then stops.
-  setTimeout(show, 500);
-  setTimeout(dismiss, 3000);
-  setTimeout(show, 4000);
-  setTimeout(dismiss, 8000);
+  // One prompt, two seconds after the page finishes loading, on selected pages.
+  const scheduleSupport = () => {
+    const pageName = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
+    const eligible = pageName === 'index.html' || pageName === 'hourly-packages.html' || Boolean(window.GE_TOUR_PAGE);
+    if (eligible && !window.geSupportScheduled) {
+      window.geSupportScheduled = true;
+      setTimeout(show, 2000);
+    }
+  };
+  if (document.readyState === 'complete') scheduleSupport();
+  else window.addEventListener('load', scheduleSupport, {once:true});
 })();

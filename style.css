@@ -993,3 +993,33 @@ body.modal-open .fab-bar{display:none}
 .ge-support-popup p{color:#536578;line-height:1.55;margin:0 0 23px}
 .ge-support-call{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:#2163b4;color:#fff;text-decoration:none;padding:12px 25px;font-weight:700}
 .ge-support-call:hover,.ge-support-call:focus-visible{background:#164d92;color:#fff}
+
+/* Current home-page collections, company details and terms. */
+.ge-home-collections{padding:56px 0 64px;background:#f3f8f8}
+.ge-home-section-heading{margin-bottom:28px}.ge-home-section-heading>span,.ge-terms-heading>span{color:#237c78;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.ge-home-section-heading h2{font-size:clamp(2.1rem,4vw,3.1rem);font-weight:600;margin:9px 0}.ge-home-section-heading p{color:#5b6f7d;line-height:1.6;margin:0}
+.ge-home-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.ge-home-card{display:flex;flex-direction:column;background:#fff;border:1px solid #dae5e8;text-decoration:none;color:#173247;box-shadow:0 10px 30px rgba(19,51,65,.06);transition:transform .2s,box-shadow .2s}
+.ge-home-card:hover{transform:translateY(-4px);box-shadow:0 15px 34px rgba(19,51,65,.13)}
+.ge-home-card-image{position:relative;height:180px;overflow:hidden}.ge-home-card-image img{width:100%;height:100%;object-fit:cover}
+.ge-home-count{position:absolute;top:13px;right:10px;background:#fff;color:#1e5557;padding:6px 9px;box-shadow:0 3px 10px rgba(0,0,0,.12);font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+.ge-home-card-body{padding:20px;display:flex;flex-direction:column;flex:1}.ge-home-dest-count{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#2b8580}
+.ge-home-card h3{font-size:2rem;font-weight:600;line-height:1.15;margin:8px 0 9px;color:#173247}.ge-home-card p{font-size:.85rem;line-height:1.6;color:#607180;margin:0 0 16px}
+.ge-home-starting{font-size:1.15rem;font-weight:700;color:#204d52;margin-top:auto}.ge-home-starting small{display:block;font-size:.65rem;color:#647782;font-weight:400;line-height:1.6;margin-top:3px}
+.ge-home-explore{padding-top:16px;margin-top:16px;border-top:1px solid #e3ebee;font-size:.8rem;font-weight:700;color:#247c78;display:flex;justify-content:space-between}
+.ge-home-collection-note{font-size:.8rem;line-height:1.6;color:#607180;margin:20px 0 0}
+.ge-footer-offices{max-width:850px;margin:0 auto 25px;display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:left}
+.ge-footer-offices>div{padding:20px;border:1px solid #cedde1;background:rgba(255,255,255,.5)}
+.ge-footer-offices h3{font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:0;color:#194251;margin:0 0 8px}
+.ge-footer-offices p{font-size:.85rem;color:#516777;line-height:1.7;margin:0}.ge-registration-separator{margin:0 12px;color:#97a9b1}
+.ge-footer-policy{margin:14px 0 22px}.ge-footer-policy a{color:#1b696a;font-weight:600;text-underline-offset:4px}
+.ge-terms-page{background:#f5f8fa;padding:142px 0 70px}.ge-terms-heading{margin-bottom:32px}.ge-terms-heading h1{font-size:clamp(2.6rem,5vw,4rem);font-weight:600;margin:12px 0}.ge-terms-heading p{color:#607180}
+.ge-terms-document{background:#fff;border:1px solid #dee7eb;padding:34px;color:#445e6f}
+.ge-terms-document h2{font-size:1.75rem;font-weight:600;letter-spacing:0;color:#183d50;margin:0 0 14px}.ge-terms-document p,.ge-terms-document li{font-size:.93rem;line-height:1.85}
+.ge-terms-document .ge-terms-welcome{padding:0 0 26px;border-bottom:1px solid #dfe8ec;margin-bottom:27px}
+.ge-terms-document section{padding:0 0 25px;margin:0 0 25px;border-bottom:1px solid #e5edf0;background:transparent;min-height:0}
+.ge-policy-number{display:block;font-size:.75rem;color:#2e8a82;letter-spacing:.1em;font-weight:700;margin-bottom:7px}.ge-terms-document ul{padding-left:21px;margin:0}.ge-terms-document li+li{margin-top:8px}
+.ge-policy-note{background:#edf7f5;border-left:3px solid #409f94;padding:17px 20px}.ge-policy-note p{margin:6px 0 0}
+.ge-policy-help{background:#e7f2f2;border:1px solid #cddfe2;padding:28px;color:#3d5c6b}.ge-policy-help>i{font-size:30px;color:#27827d}.ge-policy-help h2{font-size:2rem;font-weight:600;line-height:1.1;margin:16px 0}.ge-policy-help p{font-size:.9rem;line-height:1.75}.ge-policy-help>a{display:block;color:#166c6b;font-weight:600;margin:20px 0 0}.ge-policy-email{font-size:.8rem;overflow-wrap:anywhere}
+@media(max-width:1199px){.ge-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.ge-home-grid,.ge-footer-offices{grid-template-columns:1fr}.ge-home-collections{padding:38px 0}.ge-home-card-image{height:200px}.ge-registration-separator{display:block;font-size:0;margin:8px}.ge-terms-page{padding-top:116px}.ge-terms-document{padding:23px}.ge-terms-document h2{font-size:1.55rem}}
