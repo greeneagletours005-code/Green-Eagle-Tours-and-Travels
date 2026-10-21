@@ -1039,3 +1039,16 @@ body.modal-open .fab-bar{display:none}
 .ge-operating-panel ul{list-style:none;padding:0;margin:0}.ge-operating-panel li{font-size:.8rem;color:#415e6c;line-height:1.65;padding:5px 0;overflow-wrap:anywhere}
 @media(max-width:650px),(hover:none){.ge-operating-panel{position:static;width:100%;max-width:none;min-width:0;box-shadow:none;border-top:0;padding:10px 15px}.ge-operating-grid{align-items:start}}
 @media(max-width:650px){.ge-operating-grid{grid-template-columns:1fr;gap:9px}.ge-operating-section{padding:22px 0}.ge-operating-toggle{padding:11px 14px}}
+.stat-box .support-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .stat-box .support-number {
+    font-size: 36px;
+  }
+}
